@@ -157,7 +157,7 @@ impl Data {
 pub struct CloudEvent {
     #[serde(rename = "type")]
     event_type: String,
-    specversion: &'static str,
+    specversion: String,
     source: String,
     id: String,
     #[serde(default)]
@@ -356,7 +356,7 @@ impl CloudEventBuilder {
             datacontenttype: self.datacontenttype,
             data: self.data,
             extensions: self.extensions,
-            specversion: "1.0",
+            specversion: String::from("1.0"),
         })
     }
 }
